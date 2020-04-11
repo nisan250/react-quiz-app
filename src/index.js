@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Route, withRouter } from 'react-router-dom';
 import './index.css';
 import Quiz from './Quiz';
 import AddQuestionForm from './AddQuestionForm';
@@ -99,12 +99,12 @@ const AuthorWrapper = withRouter(({ history }) =>
 
 function render() {
   ReactDOM.render(
-  <BrowserRouter>
+    <HashRouter basename='/'>
     <React.Fragment>
       <Route exact path="/" component={App} />
       <Route path="/add" component={AuthorWrapper} />
     </React.Fragment>
-  </BrowserRouter>, document.getElementById('root'));
+  </HashRouter>, document.getElementById('root'));
 }
 render();
 
